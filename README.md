@@ -2,8 +2,9 @@
 
 > **Experimental:** use at your own peril!
 
-A convenient wrapper library for using Alda (implemented in Clojure) entirely in
-a single client, which could be written in Java or any other JVM language.
+A convenient wrapper library for using [Alda](https://alda.io) (implemented in
+Clojure) entirely in a single client, which could be written in Java or any
+other JVM language.
 
 NB: The Clojure runtime can take a good 5-10 seconds to load. This bootstrapping
 process occurs as soon as you [use the Clojure Java
