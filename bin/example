@@ -4,7 +4,7 @@ scriptdir=$(dirname $0)
 
 cd "$scriptdir/../example"
 
-gradle build
+./gradlew build
 
 echo
 echo "---------"
