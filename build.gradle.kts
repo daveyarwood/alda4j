@@ -1,10 +1,26 @@
 plugins {
   `java-library`
   `maven`
+  id("com.jfrog.bintray") version "1.8.4"
 }
 
 group = "io.djy"
-version = "0.0.1"
+version = "0.0.2"
+
+bintray {
+  user = System.getenv("BINTRAY_USER")
+  key = System.getenv("BINTRAY_KEY")
+
+  setConfigurations("archives")
+  publish = true
+
+  with(pkg) {
+    repo = "maven"
+    name = "alda4j"
+    vcsUrl = "https://github.com/daveyarwood/alda4j.git"
+    setLicenses("EPL-2.0")
+  }
+}
 
 repositories {
   jcenter()
