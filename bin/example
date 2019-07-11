@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+scriptdir=$(dirname $0)
+
+cd "$scriptdir/../example"
+
+gradle build
+
+echo
+echo "---------"
+echo
+
+java -jar build/libs/alda4j-example-fat.jar
