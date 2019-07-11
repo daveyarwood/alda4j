@@ -14,6 +14,10 @@ is the reason that Alda is implemented as a thin Java client communicating with
 a Clojure server process. Depending on your needs, the delay might be
 acceptable. If so, this library might be up your alley!
 
+## Artifact
+
+**TODO:** Deploy artifact to JCenter or somewhere.
+
 ## Example
 
 There is an example in the `example` directory. See
