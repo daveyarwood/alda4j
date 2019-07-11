@@ -13,6 +13,13 @@ is the reason that Alda is implemented as a thin Java client communicating with
 a Clojure server process. Depending on your needs, the delay might be
 acceptable. If so, this library might be up your alley!
 
+## Example
+
+There is an example in the `example` directory. See
+[App.java](example/src/main/java/alda4j/example/App.java).
+
+To build and run the example, run `bin/example`.
+
 ## License
 
 Copyright © 2019 Dave Yarwood
