@@ -6,7 +6,7 @@ import clojure.lang.ISeq;
 import clojure.lang.Keyword;
 import clojure.lang.Symbol;
 import clojure.lang.ArraySeq;
-import clojure.lang.PersistentHashMap;
+import clojure.lang.APersistentMap;
 
 public class ClojureUtil {
   public static void require(String namespace) {
@@ -22,8 +22,8 @@ public class ClojureUtil {
     return Clojure.var(var.getNamespace(), var.getName()).applyTo(argsSeq);
   }
 
-  public static PersistentHashMap hashMap(Object... args) {
-    return (PersistentHashMap)call("clojure.core/hash-map", args);
+  public static APersistentMap hashMap(Object... args) {
+    return (APersistentMap)call("clojure.core/hash-map", args);
   }
 
   public static Keyword keyword(String name) {

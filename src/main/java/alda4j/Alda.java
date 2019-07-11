@@ -1,29 +1,26 @@
 package alda4j;
 
 import clojure.java.api.Clojure;
+import clojure.lang.APersistentMap;
 import clojure.lang.Var;
-import clojure.lang.PersistentHashMap;
 
 public class Alda {
   public static void initialize() {
-    ClojureUtil.require("alda.parser");
-    ClojureUtil.require("alda.lisp");
-    ClojureUtil.require("alda.sound");
-    ClojureUtil.call("alda.sound.midi/open-midi-synth!");
-    ClojureUtil.call("alda.sound.midi/open-midi-sequencer!");
+    ClojureUtil.call("alda.worker/start-alda-environment!");
   }
 
-  public static PersistentHashMap parse(String input) {
-    return (PersistentHashMap)ClojureUtil.call(
-      "alda.parser/parse-input", input
+  public static APersistentMap parse(String input) {
+    return (APersistentMap)ClojureUtil.call("alda.parser/parse-input", input);
+  }
+
+  public static void play(String input, String history) {
+    APersistentMap opts = ClojureUtil.hashMap(
+      ClojureUtil.keyword("history"), history
     );
-  }
-
-  public static void play(PersistentHashMap score) {
-    ClojureUtil.call("alda.sound/play!", score);
+    ClojureUtil.call("alda.worker/run-play-job!", input, opts);
   }
 
   public static void play(String input) {
-    play(parse(input));
+    play(input, "");
   }
 }

@@ -21,6 +21,7 @@ tasks.test {
 
 dependencies {
   api("alda:core:0.5.4")
+  api("alda:server-clj:0.5.0")
   api("alda:sound-engine-clj:1.2.3")
   api("org.clojure:clojure:1.10.1")
 

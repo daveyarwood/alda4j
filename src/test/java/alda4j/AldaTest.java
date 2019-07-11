@@ -26,5 +26,19 @@ public class AldaTest {
       Alda.play(input);
     }
   }
+
+  private String[] inputs2 = {"trumpet: o4 c8 d", "e f", "g a b >", "c2"};
+
+  @Test
+  public void testPlayAndContinue() {
+    String history = "";
+
+    for (String input : inputs2) {
+      System.out.println("\nHistory:\n" + history);
+      System.out.println("Input:\n" + input);
+      Alda.play(input, history);
+      history += input + "\n";
+    }
+  }
 }
 
