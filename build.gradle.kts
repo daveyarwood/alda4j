@@ -1,22 +1,40 @@
 plugins {
   `java-library`
   `maven`
+  `maven-publish`
   id("com.jfrog.bintray") version "1.8.4"
 }
 
+val sourcesJar by tasks.creating(Jar::class) {
+  archiveClassifier.set("sources")
+  from(sourceSets.getByName("main").allSource)
+}
+
 group = "io.djy"
-version = "0.0.2"
+version = "0.0.9"
+
+publishing {
+  publications {
+    register("MyPublication", MavenPublication::class) {
+      from(components["java"])
+      groupId = "io.djy"
+      artifactId = "alda4j"
+      artifact(sourcesJar)
+    }
+  }
+}
 
 bintray {
   user = System.getenv("BINTRAY_USER")
   key = System.getenv("BINTRAY_KEY")
 
-  setConfigurations("archives")
+  setPublications("MyPublication")
   publish = true
 
   with(pkg) {
     repo = "maven"
     name = "alda4j"
+    version.name = project.version.toString()
     vcsUrl = "https://github.com/daveyarwood/alda4j.git"
     setLicenses("EPL-2.0")
   }
