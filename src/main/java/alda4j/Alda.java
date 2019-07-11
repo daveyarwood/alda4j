@@ -1,7 +1,7 @@
 package alda4j;
 
 public class Alda {
-  public boolean someLibraryMethod() {
-    return true;
+  public static void parse() {
+    System.out.println("test");
   }
 }
