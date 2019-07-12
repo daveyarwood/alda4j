@@ -24,6 +24,7 @@ publishing {
   }
 }
 
+// To deploy, have environment variables set up and run `gradle bintrayUpload`
 bintray {
   user = System.getenv("BINTRAY_USER")
   key = System.getenv("BINTRAY_KEY")

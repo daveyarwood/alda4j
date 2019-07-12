@@ -16,7 +16,41 @@ acceptable. If so, this library might be up your alley!
 
 ## Artifact
 
-**TODO:** Deploy artifact to JCenter or somewhere.
+Latest version: [ ![Download](https://api.bintray.com/packages/daveyarwood/maven/alda4j/images/download.svg) ](https://bintray.com/daveyarwood/maven/alda4j/_latestVersion)
+
+Artifacts are deployed to JCenter (repo URL: http://jcenter.bintray.com). Gradle
+users can simply add `jcenter()` to the `repositories` section of their
+`build.gradle`. For Maven, etc., see [this StackOverflow
+answer](https://stackoverflow.com/questions/44265547/how-to-properly-specify-jcenter-repository-in-maven-config/44304245).
+
+To add alda4j as a dependency in your project:
+
+> NB: Replace `VERSION` below with the version you want to use.
+
+### Maven
+
+```xml
+<dependency>
+  <groupId>io.djy</groupId>
+  <artifactId>alda4j</artifactId>
+  <version>VERSION</version>
+  <type>pom</type>
+</dependency>
+```
+
+### Gradle
+
+#### Groovy DSL (build.gradle)
+
+```groovy
+compile 'io.djy:alda4j:VERSION'
+```
+
+#### Kotlin DSL (build.gradle.kts)
+
+```kotlin
+compile("io.djy:alda4j:VERSION")
+```
 
 ## Example
 
