@@ -9,7 +9,7 @@ repositories {
 }
 
 dependencies {
-  compile("io.djy:alda4j:0.0.1")
+  compile("io.djy:alda4j:0.0.9")
   compile("jline:jline:2.14.6")
 }
 
