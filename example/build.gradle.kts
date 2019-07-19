@@ -6,6 +6,7 @@ plugins {
 repositories {
   jcenter()
   mavenLocal()
+  maven("https://clojars.org/repo")
 }
 
 dependencies {
