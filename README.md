@@ -14,20 +14,40 @@ is the reason that Alda is implemented as a thin Java client communicating with
 a Clojure server process. Depending on your needs, the delay might be
 acceptable. If so, this library might be up your alley!
 
-## Artifact
+## Setup
 
-Latest version: [ ![Download](https://api.bintray.com/packages/daveyarwood/maven/alda4j/images/download.svg) ](https://bintray.com/daveyarwood/maven/alda4j/_latestVersion)
+Alda4j artifacts are deployed to JCenter. Alda4j depends on Alda libraries
+(written in Clojure) that are deployed to Clojars. As such, the following two
+repositories need to be available to your build tool:
 
-Artifacts are deployed to JCenter (repo URL: http://jcenter.bintray.com). Gradle
-users can simply add `jcenter()` to the `repositories` section of their
-`build.gradle`. For Maven, etc., see [this StackOverflow
-answer](https://stackoverflow.com/questions/44265547/how-to-properly-specify-jcenter-repository-in-maven-config/44304245).
+* http://jcenter.bintray.com
+* https://clojars.org/repo
 
-To add alda4j as a dependency in your project:
-
-> NB: Replace `VERSION` below with the version you want to use.
+The artifact group ID is `io.djy` and the artifact ID is `alda4j`. The latest
+deployed version is: [ ![Download](https://api.bintray.com/packages/daveyarwood/maven/alda4j/images/download.svg) ](https://bintray.com/daveyarwood/maven/alda4j/_latestVersion)
 
 ### Maven
+
+See [this StackOverflow
+answer](https://stackoverflow.com/questions/44265547/how-to-properly-specify-jcenter-repository-in-maven-config/44304245) for details about adding repositories to your Maven project.
+
+Basically, you need to add the following to the `<repositories>` section of your
+settings.xml:
+
+```xml
+<repository>
+  <id>jcenter.bintray.com</id>
+  <url>http://jcenter.bintray.com</url>
+</repository>
+<repository>
+  <id>clojars.org</id>
+  <url>https://clojars.org/repo</url>
+</repository>
+```
+
+Add alda4j to the `<dependencies>` section of your pom.xml:
+
+> NB: Replace `VERSION` below with the version you want to use.
 
 ```xml
 <dependency>
@@ -40,13 +60,27 @@ To add alda4j as a dependency in your project:
 
 ### Gradle
 
-#### Groovy DSL (build.gradle)
+#### Groovy DSL
+
+Add `jcenter()` and `maven { url 'https://clojars.org/repo' }` to the
+`repositories` section of your `build.gradle`.
+
+Add alda4j to the dependencies:
+
+> NB: Replace `VERSION` below with the version you want to use.
 
 ```groovy
 compile 'io.djy:alda4j:VERSION'
 ```
 
-#### Kotlin DSL (build.gradle.kts)
+#### Kotlin DSL
+
+Add `jcenter()` and `maven("https://clojars.org/repo")` to the `repositories`
+section of your `build.gradle.kts`.
+
+Add alda4j to the dependencies:
+
+> NB: Replace `VERSION` below with the version you want to use.
 
 ```kotlin
 compile("io.djy:alda4j:VERSION")
