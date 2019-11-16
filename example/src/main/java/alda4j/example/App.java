@@ -1,7 +1,6 @@
 package alda4j.example;
 
 import alda4j.Alda;
-import alda4j.ClojureUtil;
 import java.io.IOException;
 import jline.console.ConsoleReader;
 
